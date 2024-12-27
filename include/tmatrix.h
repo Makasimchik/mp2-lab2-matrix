@@ -180,7 +180,7 @@ public:
 
         if (this->sz != v.size()) {
 
-            throw std::exception("NOT EQUAL SIZE");
+            throw "NOT EQUAL SIZE";
         }
 
         TDynamicVector<T> SUMM(this->sz);
@@ -204,7 +204,7 @@ public:
     T operator*(const TDynamicVector& v) noexcept(noexcept(T()))
     {
         if (this->sz != v.size()) {
-            throw std::exception("NOT EQUAL SIZE");
+            throw "NOT EQUAL SIZE";
         }
         T PR = T();
         for (int i = 0; i < this->sz; i++) {
@@ -366,9 +366,9 @@ public:
     friend istream& operator>>(istream& istr, TDynamicMatrix& v)
     {
         std::cout << "Enter the matrix";
-        for (int i = 0; i < m.size(); i++)
+        for (int i = 0; i < v.size(); i++)
         {
-            istr >> m[i];
+            istr >> v[i];
         }
         return istr;
     }
