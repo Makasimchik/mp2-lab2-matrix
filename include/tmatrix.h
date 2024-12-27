@@ -165,7 +165,7 @@ public:
 
         if (this->sz != v.size()) {
 
-            throw std::exception("NOT EQUAL SIZE");
+            throw "NOT EQUAL SIZE";
         }
 
         TDynamicVector<T> SUMM(this->sz);
@@ -327,7 +327,7 @@ public:
             ress.pMem[i] = 0;
             for (int j = 0; j < ress.size(); j++)
             {
-                ress.pMem[i] += this->pMem[i][j] * v.pMem[j + i]
+                ress.pMem[i] += this->pMem[i][j] * v.pMem[j + i];
             }
         }
         return ress;
@@ -366,7 +366,7 @@ public:
     friend istream& operator>>(istream& istr, TDynamicMatrix& v)
     {
         std::cout << "Enter the matrix";
-        for (int i = 0; i < m.sz; i++)
+        for (int i = 0; i < m.size(); i++)
         {
             istr >> m[i];
         }
